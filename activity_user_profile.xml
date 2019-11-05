@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_profile_swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2BC8D7"
+        android:fitsSystemWindows="true">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/user_profile_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="15dp"
+            android:background="#2BC8D7"
+            android:fitsSystemWindows="true"
+            app:tabBackground="@drawable/tab_indicator_white_dot"
+            app:tabGravity="center"
+            app:tabIndicator="@null"
+            app:tabIndicatorColor="#ffffff"
+            app:tabIndicatorGravity="bottom"
+            app:tabPaddingBottom="50dp"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabTextColor="#767676">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Profile" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Records" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <ImageView
+            android:id="@+id/profile_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/back_white"
+            app:layout_collapseMode="pin" />
+
+
+
+        <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/fragment_activity_background"-->
+        <!--android:layout_marginTop="95dp">-->
+
+        <!--</ScrollView>-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp"
+            android:background="#FFFFFF"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/user_profile_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
